@@ -100,20 +100,20 @@ function setSize() {
 
 // 이벤트
 window.addEventListener('resize', setSize);
-// window.addEventListener("keydown", keyDownHandler, false);
+window.addEventListener("keydown", keyDownHandler, false);
 
 draw();
 
 // player 움직임
-// player.onkeydown = function(e) {
-//     if(e.keyCode == 37) {
-//         player.position.x -= 1;
-//     } else if(e.keyCode == 39) {
-//         player.position.x += 1;
-//     } else if(e.keyCode == 38) {
-//         player.position.z -= 1;
-//     } else if(e.keyCode == 39) {
-//         player.position.z += 1;
-//     }
-// };
+player.onkeydown = function(e) {
+    if(e.keyCode == 37) {
+        player.position.x -= 1;
+    } else if(e.keyCode == 39) {
+        player.position.x += 1;
+    } else if(e.keyCode == 38) {
+        player.position.z -= 1;
+    } else if(e.keyCode == 39) {
+        player.position.z += 1;
+    }
+};
 
