@@ -56,6 +56,7 @@ directionalLight.castShadow = true;
 // mapSize 세팅으로 그림자 퀄리티 설정
 directionalLight.shadow.mapSize.width = 2048;
 directionalLight.shadow.mapSize.height = 2048;
+
 // 그림자 범위
 directionalLight.shadow.camera.left = -100;
 directionalLight.shadow.camera.right = 100;
@@ -212,6 +213,7 @@ function draw() {
 						y: 5
 					}
 				);
+
 			}
 		} else {
 			// 서 있는 상태
