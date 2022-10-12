@@ -121,7 +121,7 @@ const player = new Player({
 	scene,
 	meshes,
 	gltfLoader,
-	modelSrc: '/models/ilbuni.glb'
+	modelSrc: '/models/character1.glb'
 });
 
 const raycaster = new THREE.Raycaster();

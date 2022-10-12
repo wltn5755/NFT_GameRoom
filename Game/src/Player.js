@@ -16,8 +16,8 @@ export class Player {
 				});
 		
 				this.modelMesh = glb.scene.children[0];
-				this.modelMesh.position.y = 0.3;
-				this.modelMesh.name = 'ilbuni';
+				this.modelMesh.position.y = 0.8;
+				this.modelMesh.name = 'character1';
 				info.scene.add(this.modelMesh);
 				info.meshes.push(this.modelMesh);
 
