@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Player } from './Player';
 import { House } from './House';
-import { Sofa } from './Sofa';
 import { Room } from './Room';
 import gsap from 'gsap';
 
@@ -120,15 +119,6 @@ const house = new House({
 	x: 5,
 	y: -1.3,
 	z: 2
-});
-
-const sofa = new Sofa({
-	gltfLoader,
-	scene,
-	modelSrc: '/models/sofa.glb',
-	x: 0,
-	y: 0,
-	z: -5,
 });
 
 const room = new Room({
