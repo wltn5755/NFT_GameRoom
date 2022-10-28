@@ -13,7 +13,7 @@ export class Room {
 				this.modelMesh.castShadow = true;
 				this.modelMesh.position.set(this.x, this.y, this.z);
 				info.scene.add(this.modelMesh);
-                this.modelMesh.scale.set(0.5, 0.5, 0.5);
+                this.modelMesh.scale.set(0.55, 0.55, 0.55);
                 
 			}
 		);

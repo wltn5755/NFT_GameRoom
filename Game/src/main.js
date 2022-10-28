@@ -27,6 +27,9 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 // Scene
 const scene = new THREE.Scene();
+const loader = new THREE.TextureLoader();
+const bgTexture = loader.load('/images/background.jpg');
+scene.background = bgTexture;
 
 // Camera
 const camera = new THREE.OrthographicCamera(
@@ -45,7 +48,7 @@ camera.updateProjectionMatrix();
 scene.add(camera);
 
 // Light
-const ambientLight = new THREE.AmbientLight('white', 0.7);
+const ambientLight = new THREE.AmbientLight('white', 2.5);
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight('white', 0.5);
@@ -133,7 +136,7 @@ const room = new Room({
 	scene,
 	modelSrc: '/models/room.glb',
 	x: 0,
-	y: 0,
+	y: 1,
 	z: 0 
 });
 
