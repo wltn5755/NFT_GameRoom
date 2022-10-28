@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Player } from './Player';
 import { House } from './House';
 import { Sofa } from './Sofa';
+import { Room } from './Room';
 import gsap from 'gsap';
 
 // Texture
@@ -127,11 +128,20 @@ const sofa = new Sofa({
 	z: -5,
 });
 
+const room = new Room({
+	gltfLoader,
+	scene,
+	modelSrc: '/models/room.glb',
+	x: 0,
+	y: 0,
+	z: 0 
+});
+
 const player = new Player({
 	scene,
 	meshes,
 	gltfLoader,
-	modelSrc: '/models/character2.glb'
+	modelSrc: '/models/character1.glb'
 });
 
 const raycaster = new THREE.Raycaster();
@@ -204,6 +214,7 @@ function draw() {
 							y: 3
 						}
 					);
+				
 				}
 			} else if (house.visible) {
 				console.log('들어가');
@@ -223,7 +234,6 @@ function draw() {
 						y: 5
 					}
 				);
-
 			}
 		} else {
 			// 서 있는 상태

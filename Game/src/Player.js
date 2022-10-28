@@ -17,7 +17,7 @@ export class Player {
 		
 				this.modelMesh = glb.scene.children[0];
 				this.modelMesh.position.y = 0.75;
-				this.modelMesh.name = 'character2';
+				this.modelMesh.name = 'character1';
 				info.scene.add(this.modelMesh);
 				info.meshes.push(this.modelMesh);
 
