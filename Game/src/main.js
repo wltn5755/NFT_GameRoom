@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Player } from './Player';
 import { House } from './House';
+import { Sofa } from './Sofa';
 import gsap from 'gsap';
 
 // Texture
@@ -69,7 +70,7 @@ scene.add(directionalLight);
 // Mesh
 const meshes = [];
 const floorMesh = new THREE.Mesh(
-	new THREE.PlaneGeometry(100, 100),
+	new THREE.PlaneGeometry(15, 15),
 	new THREE.MeshStandardMaterial({
 		map: floorTexture
 	})
@@ -83,7 +84,7 @@ meshes.push(floorMesh);
 const pointerMesh = new THREE.Mesh(
 	new THREE.PlaneGeometry(1, 1),
 	new THREE.MeshBasicMaterial({
-		color: 'crimson',
+		color: 'black',
 		transparent: true,
 		opacity: 0.5
 	})
@@ -117,11 +118,20 @@ const house = new House({
 	z: 2
 });
 
+const sofa = new Sofa({
+	gltfLoader,
+	scene,
+	modelSrc: '/models/sofa.glb',
+	x: 0,
+	y: 0,
+	z: -5,
+});
+
 const player = new Player({
 	scene,
 	meshes,
 	gltfLoader,
-	modelSrc: '/models/character1.glb'
+	modelSrc: '/models/character2.glb'
 });
 
 const raycaster = new THREE.Raycaster();
@@ -154,8 +164,8 @@ function draw() {
 				destinationPoint.z - player.modelMesh.position.z,
 				destinationPoint.x - player.modelMesh.position.x
 			);
-			player.modelMesh.position.x += Math.cos(angle) * 0.05;
-			player.modelMesh.position.z += Math.sin(angle) * 0.05;
+			player.modelMesh.position.x += Math.cos(angle) * 0.08;
+			player.modelMesh.position.z += Math.sin(angle) * 0.08;
 
 			camera.position.x = cameraPosition.x + player.modelMesh.position.x;
 			camera.position.z = cameraPosition.z + player.modelMesh.position.z;
@@ -233,7 +243,7 @@ function checkIntersects() {
 	for (const item of intersects) {
 		if (item.object.name === 'floor') {
 			destinationPoint.x = item.point.x;
-			destinationPoint.y = 0.3;
+			destinationPoint.y = 1;
 			destinationPoint.z = item.point.z;
 			player.modelMesh.lookAt(destinationPoint);
 
