@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#game {
+  position: relative;
+  background: url("./images/bg.jpg") 1px -168px;
+  width: 700px;
+  height: 400px;
+}
+#gameover {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bolder;
+  filter: drop-shadow(2px 2px rgb(124, 97, 97));
+  animation: twinkle 0.5s linear 2;
+}
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+#btn {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 5px 5px red;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(to bottom, rgb(247, 50, 50) 50%, orange 50%);
+  cursor: pointer;
+}
+
+#btn:hover {
+  color: rgb(54, 236, 17);
+}
+.hidden {
+  display: none;
+}
+#character {
+  position: relative;
+  top: 203px;
+  left: -55px;
+  background: url("./images/pacman.png") -357px -178px no-repeat;
+  width: 250px;
+  height: 270px;
+  transform: scale(0.45);
+}
+.jump {
+  animation: jump 1s ease;
+}
+@keyframes jump {
+  0% {
+    top: 203px;
+  }
+  50% {
+    top: 110px;
+  }
+  75% {
+    top: 110px;
+  }
+  100% {
+    top: 203px;
+  }
+}
+#bomb {
+  position: relative;
+  top: -550px;
+  left: 0px;
+  width: 1250px;
+  height: 1280px;
+  background: url("./images/bomb.png");
+  transform: scale(0.05);
+}
+.move {
+  animation: moveBomb 2s linear infinite;
+}
+@keyframes moveBomb {
+  0% {
+    left: 45px;
+  }
+  100% {
+    left: -600px;
+  }
+}
+#jumpNum {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}

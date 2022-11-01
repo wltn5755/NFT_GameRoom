@@ -16,10 +16,13 @@ export class Player {
 				});
 		
 				this.modelMesh = glb.scene.children[0];
+				this.modelMesh.position.x = -2;
 				this.modelMesh.position.y = 0.75;
+				this.modelMesh.position.z = 0.4;
 				this.modelMesh.name = 'character1';
 				info.scene.add(this.modelMesh);
 				info.meshes.push(this.modelMesh);
+				
 
 				this.actions = [];
 		
