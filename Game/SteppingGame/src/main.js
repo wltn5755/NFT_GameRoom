@@ -240,11 +240,16 @@ againBtn.dataset.type = 'again'
 againBtn.style.cssText = 'background-color:black; color: #ffffff; font-size: 20px; position: relative; top: 380px; left: 540px;';
 againBtn.innerHTML = 'again?';
 
+const audioBtn = document.createElement('button');
+audioBtn.dataset.type = 'audio'
+audioBtn.style.cssText = 'background-color:black; color: #ffffff; font-size: 20px; position: relative; top: 120px; left: 45px;';
+audioBtn.innerHTML = 'audio';
+btnWrapper.append(audioBtn);
+
 document.body.append(btnWrapper);
 
 // 배경음악
 const backSound = new Audio('/sounds/PinkSoldier.mp3');
-backSound.play();
 
 // 시간 측정
 let time = 0;
@@ -304,6 +309,9 @@ function setRestart(e) {
 			break;
 		case 'again':
 			location.reload();
+			break;
+		case 'audio':
+			backSound.play();
 			break;
 	}
 }
