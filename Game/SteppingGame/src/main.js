@@ -242,6 +242,10 @@ againBtn.innerHTML = 'again?';
 
 document.body.append(btnWrapper);
 
+// 배경음악
+const backSound = new Audio('/sounds/PinkSoldier.mp3');
+backSound.play();
+
 // 시간 측정
 let time = 0;
 const stopwatch = document.getElementById("stopwatch");
